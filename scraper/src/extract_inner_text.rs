@@ -61,14 +61,14 @@ mod tests {
     }
 
     #[test]
-    fn test_extract_inner_text_case_6() {
+    fn test_extract_inner_text_case_4() {
         let data = r#"["value1","value2","value3","value4"]"#;
         let actual = extract_inner_text(data, &[",", ",", "\""], "\"");
         assert_eq!(actual, "value3");
     }
 
     #[test]
-    fn test_extract_inner_text_case_7() {
+    fn test_extract_inner_text_case_5() {
         let data = "||||result||";
         let actual = extract_inner_text(data, &["|", "|", "|", "|"], "|");
         assert_eq!(actual, "result");

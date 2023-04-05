@@ -29,28 +29,28 @@ mod tests {
     }
 
     #[test]
-    fn test_extract_inner_texts_case_4() {
+    fn test_extract_inner_texts_case_2() {
         let data = "|1|2|3|4|";
         let actual = extract_inner_texts(data, "|", "|");
         assert_eq!(actual, vec!["1", "2", "3", "4"]);
     }
 
     #[test]
-    fn test_extract_inner_texts_case_6() {
+    fn test_extract_inner_texts_case_3() {
         let data = "|1|2|3|4|";
         let actual = extract_inner_texts(data, "<td", "|");
         assert_eq!(actual, Vec::<String>::new());
     }
 
     #[test]
-    fn test_extract_inner_texts_case_7() {
+    fn test_extract_inner_texts_case_4() {
         let data = "|1|2|3|4|";
         let actual = extract_inner_texts(data, "|", "<td");
         assert_eq!(actual, Vec::<String>::new());
     }
 
     #[test]
-    fn test_extract_inner_texts_case_8() {
+    fn test_extract_inner_texts_case_5() {
         let raw = "s += ';DENx3uLXFWFG7F81wapfDBnGTZA=';";
         let actual = extract_inner_texts(raw, "s += '", "';");
         assert_eq!(actual, vec![";DENx3uLXFWFG7F81wapfDBnGTZA="]);
