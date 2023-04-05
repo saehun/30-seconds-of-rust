@@ -41,16 +41,16 @@ mod tests {
 
     #[test]
     fn test_extract_inner_text_case_1() {
-        let data = "안녕하세요. 저는 개발자 김인성이라고 합니다.";
+        let data = "안녕하세요. 저는 개발자 김개발이라고 합니다.";
         let actual = extract_inner_text(data, &["개발자 "], "이라고");
-        assert_eq!(actual, "김인성");
+        assert_eq!(actual, "김개발");
     }
 
     #[test]
     fn test_extract_inner_text_case_2() {
-        let data = r#"안녕하세요. 저는 개발자 "김인성" 이라고 합니다."#;
+        let data = r#"안녕하세요. 저는 개발자 "김개발" 이라고 합니다."#;
         let actual = extract_inner_text(data, &["개발자", "\""], "\" ");
-        assert_eq!(actual, "김인성");
+        assert_eq!(actual, "김개발");
     }
 
     #[test]

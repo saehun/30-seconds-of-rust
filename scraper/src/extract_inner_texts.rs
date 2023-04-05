@@ -1,4 +1,4 @@
-use crate::index_of::*;
+use crate::{index_of::*, string_utils::strip_last_char};
 
 pub fn extract_inner_texts(target: &str, left: &str, right: &str) -> Vec<String> {
     let mut results = Vec::new();
@@ -8,7 +8,7 @@ pub fn extract_inner_texts(target: &str, left: &str, right: &str) -> Vec<String>
         let start = left_idx + left.len();
         if let Some(right_idx) = index_of_with_start(right, start, target) {
             results.push(target[start..right_idx].to_string());
-            start_idx = right_idx + right.len() - 1;
+            start_idx = right_idx + strip_last_char(right).len();
         } else {
             break;
         }

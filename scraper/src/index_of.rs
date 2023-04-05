@@ -19,6 +19,10 @@ mod tests {
         assert_eq!(index_of_with_start("hello", 0, "hello world"), Some(0));
         assert_eq!(index_of_with_start("hello", 5, "hello world"), None);
         assert_eq!(index_of_with_start("hello", 5, "world hello"), Some(6));
+        assert_eq!(
+            index_of_with_start("안녕하세요", 0, "한글 안녕하세요 반갑습니다"),
+            Some(7)
+        );
     }
 
     #[test]
